@@ -21,7 +21,7 @@ const SortContainer = () => {
 
    const sortBy = async (newSort:string) => {
         dispatch(SetFetchingAC(true))
-        let response = await fetch("https://www.googleapis.com/books/v1/volumes?q="+searchTitle+"&key=AIzaSyDXCbzTmrtRBgEVROJgUhAF4Eg-4BSZLmM"+"&maxResults="+pageSize+"&orderBy="+newSort)
+        let response = await fetch("https://www.googleapis.com/books/v1/volumes?q="+searchTitle+"&key=AIzaSyCPLopkj1nGKw-UPpiGVfNIIxm0zsH6hLs"+"&maxResults="+pageSize+"&orderBy="+newSort)
         let awaits = await response.json()
         dispatch(SortBooksAC(awaits))
         dispatch(SetFetchingAC(false))

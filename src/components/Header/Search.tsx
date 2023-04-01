@@ -21,7 +21,7 @@ const Search = () => {
 
     const getItems = async () => {
         dispatch(SetFetchingAC(true))
-        let response = await fetch("https://www.googleapis.com/books/v1/volumes?q="+searchTitle+"&key=AIzaSyDXCbzTmrtRBgEVROJgUhAF4Eg-4BSZLmM"+"&maxResults="+pageSize+"&orderBy="+currentSort)
+        let response = await fetch("https://www.googleapis.com/books/v1/volumes?q="+searchTitle+"&key=AIzaSyCPLopkj1nGKw-UPpiGVfNIIxm0zsH6hLs"+"&maxResults="+pageSize+"&orderBy="+currentSort)
         // let response = await fetch("https://www.googleapis.com/books/v1/volumes?q="+searchTitle+"&key=AIzaSyDXCbzTmrtRBgEVROJgUhAF4Eg-4BSZLmM"+"&maxResults="+pageSize+"&startIndex="+(1)*(pageSize)+"&orderBy="+currentSort)
         let awaits = await response.json()
         dispatch(SearchBookAC(awaits))
